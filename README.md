@@ -15,9 +15,9 @@ I made a paid companion app, DummyFanX, that adds a GUI with fan curves, tempera
 
 ## Boards
 
-| Board | Status | Directory |
-|-------|--------|-----------|
-| Arduino Nano (ATmega328P) | Ready | [NanoFanX/](NanoFanX/) |
+| Board                     | Status | Directory              |
+| ------------------------- | ------ | ---------------------- |
+| Arduino Nano (ATmega328P) | Ready  | [NanoFanX/](NanoFanX/) |
 
 Each board has its own firmware, manual, and example clients. See the board directory for everything you need.
 
@@ -25,19 +25,19 @@ Each board has its own firmware, manual, and example clients. See the board dire
 
 See [NanoFanX/diagram/diagram.png](NanoFanX/diagram/diagram.png) for the full schematic. Quick pinout:
 
-| Pin | Purpose |
-|-----|---------|
-| D9  | PWM output to fan hub (OC1A) |
-| D2  | Motherboard PWM input (optional, INT0) |
-| D3  | Fan tachometer input (optional, INT1) |
+| Pin | Purpose                                       |
+| --- | --------------------------------------------- |
+| D9  | PWM output to fan hub (OC1A)                  |
+| D2  | Motherboard PWM input (optional, INT0)        |
+| D3  | Fan tachometer input (optional, INT1)         |
 | D4  | Speed preset button (optional, pulled to GND) |
-| GND | Share ground with fan hub and any inputs |
+| GND | Share ground with fan hub and any inputs      |
 
 ## Quick Start (Nano)
 
 1. Wire D9 to your fan hub's PWM pin, share GND
-2. Flash: `arduino-cli compile --fqbn arduino:avr:nano:cpu=atmega328old -u -p COM3 NanoFanX/firmware/main/`
-3. Done — fans run at 50%. Wire a button to D4 to cycle speeds.
+2. Flash: `arduino-cli compile --fqbn arduino:avr:nano:cpu=atmega328old -u -p COM3 NanoFanX/firmware/main/` (Will depend on your board and port)
+3. Wire a button to D4 to cycle speeds.
 
 Full details in [NanoFanX/manual.md](NanoFanX/manual.md).
 
