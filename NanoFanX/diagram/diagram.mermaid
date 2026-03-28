@@ -1,0 +1,37 @@
+graph LR
+    classDef optional stroke-dasharray: 4 4, color:#888;
+
+    subgraph Inputs [Optional Inputs]
+        PC[PC USB Port]
+        MB[Motherboard Header]
+        BTN[Case Reset Button]
+    end
+
+    subgraph Arduino [Arduino]
+        USB[USB Interface]
+        D2[D2 - MB PWM In]
+        D4[D4 - Button In]
+        
+        D9[D9 - PWM Out]
+        D3[D3 - Tach In]
+        AGND[GND]
+    end
+
+    subgraph Hub [Fan Hub Header Cable]
+        H_PWM[PWM Wire]
+        H_TACH[Tach Wire]
+        H_GND[GND Wire]
+    end
+
+    %% Inputs feeding into Arduino (Left Side)
+    PC <-.->|5V Power & Serial| USB
+    MB -.->|PWM| D2
+    BTN -.->|Toggle Pin| D4
+    BTN -.->|GND Pin| AGND
+
+    %% Arduino feeding into Fan Hub (Right Side)
+    D9 --->|Control PWM| H_PWM
+    D3 <-.-|Optional Read RPM| H_TACH
+    AGND ---|Common GND| H_GND
+
+    class D2,D4,MB,BTN,PC,USB optional;
