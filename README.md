@@ -2,7 +2,7 @@
 
 Open-source Arduino fan controller firmware. Drives 4-pin PWM fans via a fan hub, with optional motherboard PWM mirroring, RPM sensing, and a physical speed button.
 
-I made a paid companion app, DummyFanX, that adds a GUI with fan curves, temperature monitoring, and profiles, but if you don't want it, you won't need it. The firmware works standalone, and you're free to build your own software on top of it. The serial protocol is documented, and example clients are included.
+I made a paid companion app, [DummyFanX](https://bogdanmihai.gumroad.com/l/dummy-fan-x), that adds a GUI with fan curves, temperature monitoring, and profiles, but if you don't want it, you won't need it. The firmware works standalone, and you're free to build your own software on top of it. The serial protocol is documented, and example clients are included.
 
 ## Features
 
